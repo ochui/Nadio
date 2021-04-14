@@ -1,4 +1,4 @@
-<div class="navbar-fixed">
+{{-- <div class="navbar-fixed">
     <nav class="indigo darken-4">
         <div class="container">
             <div class="nav-wrapper">
@@ -112,4 +112,121 @@
         </li>
     </ul>
 
-</div>
+</div> --}}
+
+<header>
+       
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faqs.html">FAQs</a>
+          </li>
+        </ul>
+        <div class="signup-btn-cont my-2 my-lg-0">
+          <!-- <button
+            class="btn purple-color-bg text-white my-2 my-sm-0 pr-5 pl-5"
+            type="submit"
+          >
+            Signin
+          </button> -->
+        </div>
+      </div>
+    </nav>
+  
+
+  <div class="land" style="height:auto;">
+    <div class="container  land-wrap ">
+      <div class="land-text  text-left">
+        <h1>Find Houses and Book Hotel Rooms With No Difficulties.</h1>
+        <p>
+          Selected houses, apartments available in nigeria lagos, abuja and
+          more cities. Newly built and furnished properties, rent easily
+          Online. Subscribe To E-Updates.
+        </p>
+        <div class="mx-auto text-center btn-inline">
+          <a href="find-house.html">
+            <button class="button purple-color-bg m-2  land-btn text-white" type="submit">
+              Find Houses
+            </button>
+          </a>
+          <a href="find-hotel.html">
+            <button class="button purple-color-bg land-btn m-2 text-white" type="submit">
+              Find Hotels
+            </button>
+          </a>
+
+        </div>
+        <!-- <button class="btn cta-btn">GET STARTED</button> -->
+      </div>
+      <div class="mx-auto land-form">
+        <form action="find-house.html"  class="form-group form-search">
+          <div class="d-flex">
+            <img src="assets/search.svg" class="icon-img" alt="">
+            <input
+              type="text"
+              class="form-control pl-4"
+              placeholder="UYO"
+              name=""
+              id=""
+            />
+          </div>
+          <div class="d-flex">
+            <img src="assets/house-icon.svg" width="25px" class="icon-img" alt="">
+            <select class="form-control pl-5" id="exampleFormControlSelect1">
+              <option>Property Type</option>
+              <option>RENT</option>
+              <option>SALE</option>
+            </select>
+          </div>
+          
+          <div class="d-flex">
+            <img src="assets/tag.svg" class="icon-img"  alt="">
+            <select class="form-control pl-5" id="exampleFormControlSelect1">
+              <option>Property  Category</option>
+              <option>Villas</option>
+              <option>Luxury Flats</option>
+              <option>Office</option>
+              <option>Complex</option>
+              <option>Lands</option>
+            </select>
+          </div>
+          <a href="find-house.html">
+            <button class=" button purple-color-bg text-white">
+              Search
+            </button>
+          </a>
+          <figcaption>
+
+            <a class="text-center purple-color" href="find-hotel.html"> Advanced</a>
+          </figcaption>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>

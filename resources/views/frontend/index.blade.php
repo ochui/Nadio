@@ -2,6 +2,37 @@
 
 @section('content')
 
+
+<section class="" id="about">
+    <div class="container" style="padding: 30px;">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div>
+            <h4>
+              We Connect You To Hotels and Houses With The Best Rates Around
+              You
+            </h4>
+            <p>
+              Selected houses, apartments available in nigeria lagos, abuja
+              and more cities. Newly built and furnished properties, rent
+              easily Online. Subscribe To E-Update s.Selected houses,
+              apartments available in nigeria lagos, abuja and more cities.
+              Newly built and furnished properties, rent easily Online.
+            </p>
+            <button class="button purple-color-bg text-white" type="submit">
+              Learn More
+            </button>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="pt-2">
+            <img src="{{asset('rex/assets/Rectangle.png')}}" class="img-fluid" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{-- 
     <!-- SERVICE SECTION -->
 
     <section class="section grey lighten-4 center">
@@ -21,12 +52,12 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     <!-- FEATURED SECTION -->
 
-    <section class="section">
+    {{-- <section class="section">
         <div class="container">
             <div class="row">
                 <h4 class="section-heading">Featured Properties</h4>
@@ -93,45 +124,95 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
+
+    <section>
+        <div class="container">
+          <div class="d-flex split-text m-4 justify-content-between">
+            <h4>200+ Properties Near You</h4>
+            <a href="find-house.html" class="text-dark">
+              <h4>See All</h4>
+            </a>
+          </div>
+
+          <div class="row justify-content-around">
+            @foreach($properties as $property)
+            <div class="property-card col-md-3 col-sm-12">
+              <div class="mx-auto">
+
+                <img
+                  src="{{Storage::url('property/'.$property->image)}}"
+                  class="img-fluid property-img"
+                  alt=""
+                />
+              </div>
+              <div class="property-info-two">
+                <div class="tag">{{ $property->purpose }}</div>
+                <p></p>
+                <p class="font-weight-bold">₦{{ $property->price }}/year</p>
+                <p>{{ ucfirst($property->address) }}, {{ ucfirst($property->city) }}</p>
+              </div>
+            </div>
+            @endforeach
+          </div>
+        </div>
+      </section>
 
 
     <!-- TESTIMONIALS SECTION -->
+    <section class="container">
+        <div class="mt-4">
+          <h4 class="text-center fon-weight-bold">What Our Users are saying</h4>
+          <div id="demo" class="carousel slide" data-ride="carousel">
 
-    <section class="section grey lighten-3 center">
-        <div class="container">
+            <!-- Indicators -->
+            <!-- <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul> -->
 
-            <h4 class="section-heading">Testimonials</h4>
-
-            <div class="carousel testimonials">
-
-                @foreach($testimonials as $testimonial)
-                    <div class="carousel-item testimonial-item" href="#{{$testimonial->id}}!">
-                        <div class="card testimonial-card">
-                            <span style="height:20px;display:block;"></span>
-                            <div class="card-image testimonial-image">
-                                <img src="{{Storage::url('testimonial/'.$testimonial->image)}}">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title">{{$testimonial->name}}</span>
-                                <p>
-                                    {{$testimonial->testimonial}}
-                                </p>
-                            </div>
-                        </div>
+            <ol class="carousel-indicators">
+            @foreach($testimonials as $testimonial)
+              <li data-target="#demo" data-slide-to="{{$testimonial->id}}" class="active-slide"></li>
+            @endforeach
+            </ol>
+            
+            <!-- The slideshow -->
+            <div class="container carousel-inner no-padding">
+            
+            @foreach($testimonials as $testimonial)
+              <div class="carousel-item active">
+                <div class="col-md-12">
+                  <div class="mt-5">
+                    <div class="text-center p-3" >
+                      <img src="{{Storage::url('testimonial/'.$testimonial->image)}}" alt="{{$testimonial->name}}">
                     </div>
-                @endforeach
+                    <div class="text-center p-3" >
+                      <h5 class="p-3">{{$testimonial->name}}</h5>
+                      <i class="p-3">User</i>
+                      <p class="p-3">“{{$testimonial->testimonial}}”</p>
+                    </div>
+                  </div>
+                </div>      
+              </div>
 
+              @endforeach
+
+             
+              
             </div>
-
+            
+            
+          </div>
         </div>
+      </section>
 
-    </section>
 
 
     <!-- BLOG SECTION -->
 
-    <section class="section center">
+    {{-- <section class="section center">
         <div class="row">
             <h4 class="section-heading">Recent Blog</h4>
         </div>
@@ -180,7 +261,7 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
 @endsection
 

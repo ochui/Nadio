@@ -1,4 +1,4 @@
-<footer class="page-footer indigo darken-2">
+{{-- <footer class="page-footer indigo darken-2">
     <div class="container">
         <div class="row">
             <div class="col m4 s12">
@@ -71,6 +71,43 @@
                 <a class="grey-text text-lighten-4 right m-r-10" href="{{ $footersettings[0]['linkedin'] }}" target="_blank">LINKEDIN</a>
             @endif
 
+        </div>
+    </div>
+</footer> --}}
+
+
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+              <ul class="foot-links">
+                <h2 class="foot-text">Nadio</h2>
+              </ul>                  </div>
+            <div class="col-md-3 col-xs-12">
+                <ul class="foot-links">
+                <p> Quick Links</p>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-xs-12">
+                <ul class="foot-links">
+                    <p> Legal Stuff</p>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Financing</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-xs-12">
+                <h3 class="foot-text">Subscribe to Our NewsLetter</h3>
+                <form class="foot-form" action="#">
+                    <input type="email" name="email" placeholder="Enter your email" id="foot-email">
+                </form>
+                
+            </div>
         </div>
     </div>
 </footer>
