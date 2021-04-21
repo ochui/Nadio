@@ -156,7 +156,226 @@
             @endforeach
           </div>
         </div>
-      </section>
+    </section>
+
+
+    <section>
+      <div class="container">
+        <div class="d-flex m-4 split-text justify-content-between">
+          <h4>Popular Hotels In Your Location</h4>
+          <a href="find-hotel.html" class="text-dark">
+            <h4>See All</h4>
+          </a>
+        </div>
+
+        <div class="row justify-content-around">
+          <div class="property-card col-md-3 col-sm-12">
+            <img
+              src="assets/property-card.png"
+              class="img-fluid property-img"
+              alt=""
+            />
+            <div class="property-info-two">
+              <p class="font-weight-bold">Monty Hotels and Suites</p>
+              <p>Edet Akpan Avenue, Uyo</p>
+              <p class="">
+                #4,000 <span style="font-size: 9px">Avg/night</span>
+              </p>
+            </div>
+          </div>
+          <div class="property-card col-md-3 col-sm-12 ">
+            <img
+              src="{{asset('rex/assets/assets/property-card.png')}}"
+              class="img-fluid property-img"
+              alt=""
+            />
+            <div class="property-info-two">
+              <p class="font-weight-bold">Monty Hotels and Suites</p>
+              <p>Edet Akpan Avenue, Uyo</p>
+              <p class="">
+                #4,000 <span style="font-size: 9px">Avg/night</span>
+              </p>
+            </div>
+          </div>
+          <div class="property-card col-md-3 col-sm-12">
+            <img
+              src="assets/property-card.png"
+              class="img-fluid property-img"
+              alt=""
+            />
+            <div class="property-info-two">
+              <p class="font-weight-bold">Monty Hotels and Suites</p>
+              <p>Edet Akpan Avenue, Uyo</p>
+              <p class="">
+                #4,000 <span style="font-size: 9px">Avg/night</span>
+              </p>
+            </div>
+          </div>
+          <!-- <div class="property-card col-md-3 col-sm-12">
+            <img
+              src="assets/property-card.png"
+              class="img-fluid property-img"
+              alt=""
+            />
+            <div class="property-info-two">
+              <p class="font-weight-bold">Monty Hotels and Suites</p>
+              <p>Edet Akpan Avenue, Uyo</p>
+              <p class="">
+                #4,000 <span style="font-size: 9px">Avg/night</span>
+              </p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <section style="height:auto;"> 
+      <div class="container">
+        <div class="results">
+          <div class="ht1">
+            <h3>
+              We Connect You To Hotels and Houses With The Best Rates Around
+              You
+            </h3>
+          </div>
+
+          <div class="ht2">
+            <img src="{{asset('rex/assets/grid-pic.png')}}" class="img-fluid" />
+          </div>
+
+          <div class="ht3">
+            <img src="{{asset('rex/assets/beaut.png')}}" class="img-fluid" />
+          </div>
+
+          <div class="ht4">
+            <p>
+              houses, apartments available in nigeria lagos, abuja and more
+              cities. Newly built and furnished properties, rent easily
+              Online. Subscribe To E-Updates.Selected houses, apartments
+              available in nigeria lagos, abuja and more cities. Newly built
+              and furnished properties, rent easily Onl ine. nigeria lagos,
+              abuja and more cities. Newly built and furnished properties,
+              rent easily Online. Subscribe
+            </p>
+            <button class="button purple-color-bg text-white" type="submit">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="container">
+      <div class=" mt-4" >
+        <h4 class="split-text">Popular Eateries Around You</h4>
+        <div id="around" class="slide" data-ride="carousel" data-interval="10000">
+
+          <!-- Indicators -->
+          <!-- <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul> -->
+
+          <!-- <ol class="carousel-indicators">
+            <li data-target="#around" data-slide-to="0" class="active-slide"></li>
+            <li data-target="#around" data-slide-to="1"></li>
+            <li data-target="#around" data-slide-to="2"></li>
+          </ol> -->
+          
+          <!-- The slideshow -->
+          
+          
+        </div>
+            <div class="owl-carousel carousel-one">
+              
+              <div class="div-card">
+                <div class="house-card">
+                  <div>
+                      <img src="{{asset('rex/assets/bedroom.png')}}" class="img-fluid" alt="">
+                  </div>
+                    <div class="d-flex justify-content-between pt-3 grey-area">
+                        <div>
+                          <div class="tag">Eatery</div>
+                            <p></p>
+                            <p class="font-weight-bold">Crunches and fried chicken</p>
+                            <p>Edet Akpan Avenue, Uyo</p>
+                        </div>
+                        
+                    </div>
+                  </div> 
+              </div> 
+              <div class="div-card">
+                <div class="house-card">
+                  <div>
+                      <img src="{{asset('rex/assets/bedroom.png')}}" class="img-fluid" alt="">
+                  </div>
+                    <div class="d-flex justify-content-between pt-3 grey-area">
+                        <div>
+                          <div class="tag">Eatery</div>
+                            <p></p>
+                            <p class="font-weight-bold">Crunches and fried chicken</p>
+                            <p>Edet Akpan Avenue, Uyo</p>
+                        </div>
+                        
+                    </div>
+                  </div> 
+              </div> 
+              <div class="div-card">
+                <div class="house-card">
+                  <div>
+                      <img src="{{asset('rex/assets/bedroom.png')}}" class="img-fluid" alt="">
+                  </div>
+                    <div class="d-flex justify-content-between pt-3 grey-area">
+                        <div>
+                          <div class="tag">Eatery</div>
+                            <p></p>
+                            <p class="font-weight-bold">Crunches and fried chicken</p>
+                            <p>Edet Akpan Avenue, Uyo</p>
+                        </div>
+                        
+                    </div>
+                  </div> 
+              </div> 
+              <div class="div-card">
+                <div class="house-card">
+                  <div>
+                      <img src="{{asset('rex/assets/bedroom.png')}}" class="img-fluid" alt="">
+                  </div>
+                    <div class="d-flex justify-content-between pt-3 grey-area">
+                        <div>
+                          <div class="tag">Eatery</div>
+                            <p></p>
+                            <p class="font-weight-bold">Crunches and fried chicken</p>
+                            <p>Edet Akpan Avenue, Uyo</p>
+                        </div>
+                        
+                    </div>
+                  </div> 
+              </div> 
+              <div class="div-card">
+                <div class="house-card">
+                  <div>
+                      <img src="{{asset('rex/assets/bedroom.png')}}" class="img-fluid" alt="">
+                  </div>
+                    <div class="d-flex justify-content-between pt-3 grey-area">
+                        <div>
+                          <div class="tag">Eatery</div>
+                            <p></p>
+                            <p class="font-weight-bold">Crunches and fried chicken</p>
+                            <p>Edet Akpan Avenue, Uyo</p>
+                        </div>
+                        
+                    </div>
+                  </div> 
+              </div> 
+              
+
+              
+            </div>
+      </div>
+    </section>
 
 
     <!-- TESTIMONIALS SECTION -->
@@ -182,7 +401,11 @@
             <div class="container carousel-inner no-padding">
             
             @foreach($testimonials as $testimonial)
+              @if ($testimonial->id == 1)
               <div class="carousel-item active">
+              @else
+              <div class="carousel-item"> 
+              @endif
                 <div class="col-md-12">
                   <div class="mt-5">
                     <div class="text-center p-3" >
@@ -212,56 +435,7 @@
 
     <!-- BLOG SECTION -->
 
-    {{-- <section class="section center">
-        <div class="row">
-            <h4 class="section-heading">Recent Blog</h4>
-        </div>
-        <div class="container">
-            <div class="row">
-
-                @foreach($posts as $post)
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image">
-                            @if(Storage::disk('public')->exists('posts/'.$post->image) && $post->image)
-                                <span class="card-image-bg" style="background-image:url({{Storage::url('posts/'.$post->image)}});"></span>
-                            @endif
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title tooltipped" data-position="bottom" data-tooltip="{{$post->title}}">
-                                <a href="{{ route('blog.show',$post->slug) }}">{{ str_limit($post->title,18) }}</a>
-                            </span>
-                            {!! str_limit($post->body,120) !!}
-                        </div>
-                        <div class="card-action blog-action">
-                            <a href="{{ route('blog.author',$post->user->username) }}" class="btn-flat">
-                                <i class="material-icons">person</i>
-                                <span>{{$post->user->name}}</span>
-                            </a>
-                            @foreach($post->categories as $key => $category)
-                                <a href="{{ route('blog.categories',$category->slug) }}" class="btn-flat">
-                                    <i class="material-icons">folder</i>
-                                    <span>{{$category->name}}</span>
-                                </a>
-                            @endforeach
-                            @foreach($post->tags as $key => $tag)
-                                <a href="{{ route('blog.tags',$tag->slug) }}" class="btn-flat">
-                                    <i class="material-icons">label</i>
-                                    <span>{{$tag->name}}</span>
-                                </a>
-                            @endforeach
-                            <a href="#" class="btn-flat disabled">
-                                <i class="material-icons">watch_later</i>
-                                <span>{{$post->created_at->diffForHumans()}}</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-
-            </div>
-        </div>
-    </section> --}}
+    
 
 @endsection
 

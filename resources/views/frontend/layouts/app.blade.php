@@ -20,7 +20,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" ntegrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ asset('rex/css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('rex/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('rex/css/view.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('rex/css/bootstrap.min.css') }}" /> --}}
+    <!-- carousel -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
     @yield('styles')
     
@@ -40,14 +47,14 @@
         {{-- @include('frontend.partials.search') --}}
         
         {{-- MAIN CONTENT --}}
-        <div class="main">
+        <div class="">
             @yield('content')
-        </div>
+        
 
         {{-- FOOTER --}}
         @include('frontend.partials.footer')
 
-
+        </div>
         <!--JavaScript at end of body for optimized loading-->
         {{-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> --}}
 

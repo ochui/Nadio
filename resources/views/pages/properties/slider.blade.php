@@ -1,11 +1,11 @@
-    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:480px;overflow:hidden;visibility:hidden;">
+    {{-- <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:480px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="{{ asset('frontend/images/spin.svg') }}" />
         </div>
         <!-- Slider -->
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
-            @foreach($property->gallery as $gallery)
+            @foreach ($property->gallery as $gallery)
             <div>
                 <img data-u="image" src="{{Storage::url('property/gallery/'.$gallery->name)}}" />
                 <img data-u="thumb" src="{{Storage::url('property/gallery/'.$gallery->name)}}" />
@@ -40,4 +40,35 @@
                 <line class="a" x1="5426.1" y1="8000" x2="10573.9" y2="8000"></line>
             </svg>
         </div>
+    </div> --}}
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            @foreach ($property->gallery as $gallery)
+                <div class="carousel-item active">
+                    <img class="d-block w-100 img-fluid" src="{{ Storage::url('property/gallery/' . $gallery->name) }}" alt="{{$gallery->name}}">
+                </div>
+            @endforeach
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
+
+    <div class="pt-3">
+        <h3>Image Gallery</h3>
+        <div class="row gallery-item">
+            @foreach ($property->gallery as $gallery)
+                <div class="col-md-3">
+                    <img class="img-fluid" src="{{ Storage::url('property/gallery/' . $gallery->name) }}" alt="{{$gallery->name}}">
+                </div>
+            
+            @endforeach
+          
+        </div>            
+      </div>

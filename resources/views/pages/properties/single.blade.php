@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('styles')
+{{-- @section('styles')
 <style>
     #map {
         height: 320px;
@@ -45,11 +45,152 @@
     .jssort101 .t {position:absolute;top:0;left:0;width:100%;height:100%;border:none;opacity:.6;}
     .jssort101 .pav .t, .jssort101 .p:hover .t{opacity:1;}
 </style>
-@endsection
+@endsection --}}
 
 @section('content')
 
     <!-- SINGLE PROPERTY SECTION -->
+
+    <main class="mt-5 main">
+        <div class="container">
+            <p>Home > Search > {{ $property->title }}</p>
+            <div class="d-flex justify-content-between">
+                <h3>{{ $property->title }}</h3>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5>{{ $property->address }}, {{ $property->city }}</h5>
+                <h5>₦{{ $property->price }}/ yr</h5>
+            </div>
+
+            @if(!$property->gallery->isEmpty())
+                @include('pages.properties.slider')
+            @else
+                <div class="single-image">
+                    @if(Storage::disk('public')->exists('property/'.$property->image) && $property->image)
+                        <img src="{{Storage::url('property/'.$property->image)}}" alt="{{$property->title}}" class="imgresponsive">
+                    @endif
+                </div>
+            @endif
+            
+
+                <div class="mt-4">
+                  <nav style="width: 30%;"> 
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist" >
+                      <a class="nav-item nav-link active" style="font-size: 14px;" id="nav-home-tab" data-toggle="tab" href="#nav-home"  role="tab" aria-controls="nav-home" aria-selected="true">Property Description</a>
+                      <a class="nav-item nav-link" id="nav-profile-tab" style="font-size: 14px;" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Contact Details</a>
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class="pt-3">
+                        <div>
+
+                          <h5>Property Description</h5>
+                          {!! $property->description !!}
+                        </div>
+                        <div>
+                          <h5>Property Furnitures</h5>
+                          <ul class="list-unstyled">
+                             <li>Wifi</li>
+                             <li>Huge Parking Space</li>
+                             <li>swimming pool</li>
+                             <li>Bar</li>
+                          </ul>
+                          <h5>Utilities</h5>
+                          <ul class="list-unstyled">
+                            <li>Water</li>
+                            <li>Electricity</li>
+                         </ul>
+
+                         <h5>Pricing and Duration</h5>
+                         
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                      <div>
+                        <h5>Contact Details</h5>
+                        <ul class="list-unstyled">
+                          <li class="p-2"><span class="iconify" data-icon="ri:whatsapp-fill" data-inline="false"></span> 234818919919, 2348858858</li>
+                          <li class="p-2"><span class="iconify" data-icon="carbon:phone-filled" data-inline="false"></span></span>234818919919, 2348858858</li>
+
+                        </li>
+                        </ul>
+                      </div>
+                      <div class="pt-3">
+                        <h5>Reach Us Through Mail or Arrange a Tour</h5>
+                        <form action="" class="form-group contact-form">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label for="name">Name</label>
+                              <input name="name" class="form-control" type="name" placeholder="Your Name" name="" id="">
+                              <label for="name">Number</label>
+                              <input name="tel" class="form-control" type="name" placeholder="Your Number" name="" id="">
+                              <label for="email">Email</label>
+                              <input name="email" class="form-control" type="email" placeholder="Your Email" name="" id="">
+
+                            </div>
+                            <div class="col-md-6">
+                              <label for="message">Message</label>
+                              <textarea name="message" class="form-control" placeholder="type your message here" id="" cols="50" rows="5"></textarea>
+                              <button class="button purple-color-bg text-white mt-3" type="submit">
+                                Submit
+                              </button>
+                            </div>
+                          </div>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+
+                <div class="mt-4">
+                  <h4>Similar Available Hotels</h4>
+                  <div class="owl-carousel carousel-two">
+
+                    @foreach($relatedproperty as $property_related)
+                    <li class="collection-item p-0">
+                        <a href="{{ route('property.show',$property_related->id) }}">
+                            <div class="card horizontal card-no-shadow m-0">
+                                @if($property_related->image)
+                                <div class="card-image">
+                                    <img src="{{Storage::url('property/'.$property_related->image)}}"  class="imgresponsive">
+                                </div>
+                                @endif
+                                <div class="card-stacked">
+                                    <div class="p-l-10 p-r-10 indigo-text">
+                                        <h6 title="{{$property_related->title}}">{{ str_limit( $property_related->title, 18 ) }}</h6>
+                                        <strong>&dollar;</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <div class="div-card">
+                        <div class="house-card">
+                          <div>
+                              <img src="{{Storage::url('property/'.$property_related->image)}}" class="img-fluid" alt="{{$property_related->title}}">
+                          </div>
+                            <div class="d-flex justify-content-between pt-3 grey-area">
+                                <div>
+                                  <div class="tag">For Rent</div>
+                                    <p>{{$property_related->title}}</p>
+                                    <p class="font-weight-bold">₦{{$property_related->price}}/year</p>
+                                    <p>{{ $property_related->address }}, {{ $property_related->city }}</p>
+                                </div>
+                                <div>
+                                    <a href="{{ route('property.show',$property_related->id) }}" class="purple-color font-weight-bold">See Details</a>
+                                </div>
+                            </div>
+                         </div> 
+                      </div>
+                    @endforeach
+                    
+                  </div>
+                </div>
+        </div>
+      </main>
 
     <section class="section">
         <div class="container">
@@ -434,86 +575,7 @@
         })
     </script>
 
-    <script src="{{ asset('frontend/js/jssor.slider.min.js') }}"></script>
-    <script>
-        jssor_1_slider_init = function() {
 
-            var jssor_1_SlideshowTransitions = [
-            {$Duration:1200,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-            {$Duration:1200,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
-            ];
-
-            var jssor_1_options = {
-            $AutoPlay: 1,
-            $SlideshowOptions: {
-                $Class: $JssorSlideshowRunner$,
-                $Transitions: jssor_1_SlideshowTransitions,
-                $TransitionsOrder: 1
-            },
-            $ArrowNavigatorOptions: {
-                $Class: $JssorArrowNavigator$
-            },
-            $ThumbnailNavigatorOptions: {
-                $Class: $JssorThumbnailNavigator$,
-                $SpacingX: 5,
-                $SpacingY: 5
-            }
-            };
-
-            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-            /*#region responsive code begin*/
-
-            var MAX_WIDTH = 980;
-
-            function ScaleSlider() {
-                var containerElement = jssor_1_slider.$Elmt.parentNode;
-                var containerWidth = containerElement.clientWidth;
-
-                if (containerWidth) {
-
-                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
-                    jssor_1_slider.$ScaleWidth(expectedWidth);
-                }
-                else {
-                    window.setTimeout(ScaleSlider, 30);
-                }
-            }
-
-            ScaleSlider();
-
-            $Jssor$.$AddEvent(window, "load", ScaleSlider);
-            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-            /*#endregion responsive code end*/
-        };
-
-        @if(!$property->gallery->isEmpty())
-            jssor_1_slider_init();
-        @endif
-
-    </script>
     <script>
         function initMap() {
             var propLatLng = {
