@@ -36,7 +36,7 @@
     <body>
         
         {{-- SLIDER SECTION --}}
-        @if(Request::is('/'))
+        @if(Request::is('/') || Request::is('property*'))
             @include('frontend.partials.bannerwithsearch')
         @else
             {{-- MAIN NAVIGATION BAR --}}
