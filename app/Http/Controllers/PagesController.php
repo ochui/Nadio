@@ -308,7 +308,8 @@ class PagesController extends Controller
     }
 
     public function faq() {
-
+        $page = ['page' => 'FAQ'];
+        return view('pages.faq', $page);
     }
     
 }
