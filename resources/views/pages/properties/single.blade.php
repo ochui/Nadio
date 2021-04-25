@@ -88,22 +88,28 @@
                           <h5>Property Description</h5>
                           {!! $property->description !!}
                         </div>
+                        <h5>Property Details</h5>
+                         <ul class="list-unstyled">
+                             <li>Bedroom: {{ $property->bedroom}}</li>
+                             <li>Bathroom: {{ $property->bathroom}}</li>
+                             <li>Area: {{ $property->area}} Sq Ft</li>
+                         </ul>
                         <div>
                           <h5>Property Furnitures</h5>
                           <ul class="list-unstyled">
-                             <li>Wifi</li>
+                            @foreach($property->features as $feature)
+                            <li>{{$feature->name}}</li>
+                            @endforeach
+                             {{-- <li>Wifi</li>
                              <li>Huge Parking Space</li>
                              <li>swimming pool</li>
-                             <li>Bar</li>
+                             <li>Bar</li> --}}
                           </ul>
-                          <h5>Utilities</h5>
+                          {{-- <h5>Utilities</h5>
                           <ul class="list-unstyled">
                             <li>Water</li>
                             <li>Electricity</li>
-                         </ul>
-
-                         <h5>Pricing and Duration</h5>
-                         
+                         </ul> --}}
                         </div>
                       </div>
                     </div>
@@ -119,13 +125,17 @@
                       </div>
                       <div class="pt-3">
                         <h5>Reach Us Through Mail or Arrange a Tour</h5>
-                        <form action="" class="form-group contact-form">
+                        <form action="" method="POST" class="form-group contact-form">
+                            @csrf
+                            <input type="hidden" name="agent_id" value="{{ $property->user->id }}">
+                            <input type="hidden" name="user_id" value="{{ auth()->id() }}">
+                            <input type="hidden" name="property_id" value="{{ $property->id }}">
                           <div class="row">
                             <div class="col-md-6">
                               <label for="name">Name</label>
                               <input name="name" class="form-control" type="name" placeholder="Your Name" name="" id="">
                               <label for="name">Number</label>
-                              <input name="tel" class="form-control" type="name" placeholder="Your Number" name="" id="">
+                              <input name="tel" class="form-control" type="phone" placeholder="Your Number" name="" id="">
                               <label for="email">Email</label>
                               <input name="email" class="form-control" type="email" placeholder="Your Email" name="" id="">
 
@@ -145,7 +155,7 @@
                   
                 </div>
 
-                <div class="mt-4">
+                {{-- <div class="mt-4">
                   <h4>Similar Available Hotels</h4>
                   <div class="owl-carousel carousel-two">
 
@@ -188,14 +198,14 @@
                     @endforeach
                     
                   </div>
-                </div>
+                </div> --}}
         </div>
       </main>
 
-    <section class="section">
+    {{-- <section class="section">
         <div class="container">
-            <div class="row">
-                <div class="col s12 m8">
+            <div class="row"> --}}
+                {{-- <div class="col s12 m8">
                     <div class="single-title">
                         <h4 class="single-title">{{ $property->title }}</h4>
                     </div>
@@ -293,88 +303,15 @@
                         </div>
                     </div>
 
-                    <div class="card-no-box-shadow card">
-                        <div class="p-15 grey lighten-4">
-                            <h5 class="m-0">
-                                {{ $property->comments_count }} Comments
-                                @auth
-                                <div class="right" id="rateYo"></div>
-                                @endauth
-                            </h5>
-                        </div>
-                        <div class="single-narebay p-15">
 
-                            @foreach($property->comments as $comment)
-
-                                @if($comment->parent_id == NULL)
-                                    <div class="comment">
-                                        <div class="author-image">
-                                            <span style="background-image:url({{ Storage::url('users/'.$comment->users->image) }});"></span>
-                                        </div>
-                                        <div class="content">
-                                            <div class="author-name">
-                                                <strong>{{ $comment->users->name }}</strong>
-                                                <span class="time">{{ $comment->created_at->diffForHumans() }}</span>
-
-                                                @auth
-                                                    <span id="commentreplay" class="right replay" data-commentid="{{ $comment->id }}">Replay</span>
-                                                @endauth
-
-                                            </div>
-                                            <div class="author-comment">
-                                                {{ $comment->body }}
-                                            </div>
-                                        </div>
-                                        <div id="procomment-{{$comment->id}}"></div>
-                                    </div>
-                                @endif
-
-                                @foreach($comment->children as $commentchildren)
-                                    <div class="comment children">
-                                        <div class="author-image">
-                                            <span style="background-image:url({{ Storage::url('users/'.$commentchildren->users->image) }});"></span>
-                                        </div>
-                                        <div class="content">
-                                            <div class="author-name">
-                                                <strong>{{ $commentchildren->users->name }}</strong>
-                                                <span class="time">{{ $commentchildren->created_at->diffForHumans() }}</span>
-                                            </div>
-                                            <div class="author-comment">
-                                                {{ $commentchildren->body }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-
-                            @endforeach
-
-                            @auth
-                                <div class="comment-box">
-                                    <h6>Leave a comment</h6>
-                                    <form action="{{ route('property.comment',$property->id) }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="parent" value="0">
-
-                                        <textarea name="body" class="box"></textarea>
-                                        <input type="submit" class="btn indigo" value="Comment">
-                                    </form>
-                                </div>
-                            @endauth
-
-                            @guest 
-                                <div class="comment-login">
-                                    <h6>Please Login to comment</h6>
-                                    <a href="{{ route('login') }}" class="btn indigo">Login</a>
-                                </div>
-                            @endguest
                             
                         </div>
                     </div>
 
-                </div>
+                </div> --}}
                 {{-- End ./COL M8 --}}
 
-                <div class="col s12 m4">
+                {{-- <div class="col s12 m4">
                     <div class="clearfix">
 
                         <div>
@@ -475,11 +412,11 @@
                         </div>
 
                     </div>
-                </div>
-            </div>
+                </div> --}}
+            {{-- </div>
 
         </div>
-    </section>
+    </section> --}}
 
     {{-- RATING --}}
     @php
