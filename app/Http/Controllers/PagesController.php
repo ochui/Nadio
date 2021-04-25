@@ -303,7 +303,8 @@ class PagesController extends Controller
     }
 
     public function about() {
-
+        $page = ['page' => 'ABOUT US'];
+        return view('pages.about', $page);
     }
 
     public function faq() {
