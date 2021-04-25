@@ -2,7 +2,7 @@
        
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="/">Navbar</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -21,14 +21,14 @@
           @include('frontend.partials.nav')
 
           
-        <div class="signup-btn-cont my-2 my-lg-0">
+        {{-- <div class="signup-btn-cont my-2 my-lg-0">
           <button
             class="btn purple-color-bg text-white my-2 my-sm-0 pr-5 pl-5"
             type="submit"
           >
             Signin
           </button> 
-        </div>
+        </div> --}}
       </div>
     </nav>
   

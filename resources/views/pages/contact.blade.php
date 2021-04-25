@@ -6,7 +6,58 @@
 
 @section('content')
 
-    <section class="section">
+<section>
+          
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form id="contact-us" action="" method="POST" method="POST" class="form-group contact-form">
+                    <input type="hidden" name="mailto" value="{{ $contactsettings[0]['email'] ?? '' }}">
+                    @csrf
+                    @auth
+                        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
+                    @endauth
+                    <label for="name">Name</label>
+                    <input name="name" class="form-control" type="name" placeholder="Your Name" name="" id="">
+                    <label for="email">Email</label>
+                    <input name="email" class="form-control" type="email" placeholder="Your Email" name="" id="">
+                    <label for="message">Message</label>
+                    <textarea name="message" class="form-control" placeholder="type your message here" id="" cols="50" rows="10"></textarea>
+                    <button class="button purple-color-bg text-white mt-3" type="submit">
+                      Submit
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                  <div class="col-md-6">
+                      <h5 class="font-weight-bold">Our  Address</h5>
+                      <p>
+                          Plot 47, K line Ewet housing
+                          Estate, Uyo, Nigeria
+                      </p>
+                  </div>
+                  <div class="col-md-6">
+                      <h5 class="font-weight-bold">Phone Lines</h5>
+                      <p>+234 908 378 1815</p>
+                      <p>+234 908 378 1815</p>
+                  </div>
+              </div>
+              <h5 class="font-weight-bold">Follow Us On Social
+                  Media</h5>
+                      <ul class="list-unstyled d-flex">
+                          <li class="p-2"><span class="iconify" data-icon="carbon:phone-filled" data-inline="false"></span></span></li>
+                          <li class="p-2"><span class="iconify" data-icon="bx:bxl-telegram" data-inline="false"></span></li>
+                          <li class="p-2"><span class="iconify" data-icon="ri:whatsapp-fill" data-inline="false"></span></li>
+                          <li class="p-2"><span class="iconify" data-icon="codicon:twitter" data-inline="false"></span></li>
+                      </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    {{-- <section class="section">
         <div class="container">
             <div class="row">
 
@@ -14,9 +65,9 @@
                     <div class="contact-content">
                         <h4 class="contact-title">Contact Us</h4>
 
-                        <form id="contact-us" action="" method="POST">
+                        <form >
                             @csrf
-                            <input type="hidden" name="mailto" value="{{ $contactsettings[0]['email'] ?? 'p4alam@gmail.com' }}">
+                            <input type="hidden" name="mailto" value="{{ $contactsettings[0]['email'] }}">
 
                             @auth
                                 <input type="hidden" name="user_id" value="{{ auth()->id() }}">
@@ -102,7 +153,7 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
 @endsection
 

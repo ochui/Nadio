@@ -28,6 +28,8 @@ Route::get('/blog/author/{username}', 'PagesController@blogAuthor')->name('blog.
 
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::post('/contact', 'PagesController@messageContact')->name('contact.message');
+Route::get('/about', 'PagesController@contact')->name('about');
+Route::get('/faq', 'PagesController@contact')->name('faq');
 
 
 Auth::routes();

@@ -190,7 +190,8 @@ class PagesController extends Controller
     // CONATCT PAGE
     public function contact()
     {
-        return view('pages.contact');
+        $page = ['page' => 'CONTACT US'];
+        return view('pages.contact', $page);
     }
 
     public function messageContact(Request $request)
@@ -299,6 +300,14 @@ class PagesController extends Controller
             "<iframe width=\"$w\" height=\"$h\" src=\"//www.youtube.com/embed/$2\" frameborder=\"0\" allowfullscreen></iframe>",
             $youtubelink
         );
+    }
+
+    public function about() {
+
+    }
+
+    public function faq() {
+
     }
     
 }
