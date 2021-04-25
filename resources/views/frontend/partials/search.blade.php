@@ -16,7 +16,7 @@
       <div class="d-flex">
         <img src="{{asset('rex/assets/house-icon.svg')}}" width="25px" class="icon-img" alt="">
         <select class="form-control pl-5" name="purpose" id="exampleFormControlSelect1">
-          <option>Property Type</option>
+          <option disabled selected>Property Type</option>
           <option>RENT</option>
           <option>SALE</option>
         </select>
@@ -25,7 +25,7 @@
       <div class="d-flex">
         <img src="{{asset('rex/assets/tag.svg')}}" class="icon-img"  alt="">
         <select class="form-control pl-5" name="type" id="exampleFormControlSelect1">
-          <option>Property  Category</option>
+          <option disabled selected>Property  Category</option>
           <option>Villas</option>
           <option>Luxury Flats</option>
           <option>Office</option>
@@ -33,14 +33,14 @@
           <option>Lands</option>
         </select>
       </div>
-      <a href="find-house.html">
+      {{-- <a href="find-house.html"> --}}
         <button class=" button purple-color-bg text-white">
           Search
         </button>
-      </a>
+      {{-- </a> --}}
       <figcaption>
 
-        <a class="text-center purple-color" href="find-hotel.html"> Advanced</a>
+        <a class="text-center purple-color" href="{{route('search')}}"> Advanced</a>
       </figcaption>
     </form>
   </div>

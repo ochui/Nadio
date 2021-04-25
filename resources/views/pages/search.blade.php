@@ -6,7 +6,52 @@
 
 @section('content')
 
-    <section>
+
+<main class="mt-4 main">
+    <div class="container">
+        <p>Home > Properties > Houses</p>
+        <div class="row">
+            @foreach($properties as $property)
+            <div class="col-md-6">
+                <div class="house-card">
+                    <div>
+                        <img src="{{ Storage::url('property/' . $property->image) }}" class="img-fluid" alt="" />
+                    </div>
+                    <div class="d-flex justify-content-between pt-3 grey-area">
+                        <div>
+                            <div class="tag">For {{ ucfirst($property->purpose) }}</div>
+                            <p>{{ $property->title }}</p>
+                            <p class="font-weight-bold">₦{{ $property->price }}/year</p>
+                            <p>{{ ucfirst($property->address) }}, {{ ucfirst($property->city) }}</p>
+                        </div>
+                        <div>
+                            <a href="{{ route('property.show', $property->slug) }}">
+                                <p class="purple-color font-weight-bold">See Details</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+           
+        </div>
+       
+
+        <div class="mx-auto text-center the-paginate" aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+    {{-- <section>
         <div class="container">
             <div class="row">
 
@@ -178,7 +223,7 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
 @endsection
 
