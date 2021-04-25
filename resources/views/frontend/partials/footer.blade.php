@@ -86,10 +86,10 @@
             <div class="col-md-3 col-xs-12">
                 <ul class="foot-links">
                 <p> Quick Links</p>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blogs</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">FAQs</a></li>
+                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="{{ route('blog') }}">Blogs</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                    <li><a href="{{ route('faq') }}">FAQs</a></li>
                 </ul>
             </div>
             <div class="col-md-3 col-xs-12">
