@@ -19,9 +19,9 @@
               apartments available in nigeria lagos, abuja and more cities.
               Newly built and furnished properties, rent easily Online.
             </p>
-            <button class="button purple-color-bg text-white" type="submit">
+            <a class="button purple-color-bg text-white" href="{{route('about')}}">
               Learn More
-            </button>
+            </a>
           </div>
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12">
@@ -257,9 +257,9 @@
               abuja and more cities. Newly built and furnished properties,
               rent easily Online. Subscribe
             </p>
-            <button class="button purple-color-bg text-white" type="submit">
+            <a class="button purple-color-bg text-white" href="{{route('about')}}">
               Learn More
-            </button>
+            </a>
           </div>
         </div>
       </div>

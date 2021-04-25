@@ -1,43 +1,45 @@
 :root {
-  --purple-color: #313056;
-  --main-font-family: "Inter", sans-serif;
+    --purple-color: #313056;
+    --main-font-family: "Inter", sans-serif;
 }
 
 html,
 body {
-  font-family: var(--main-font-family) !important;
+    font-family: var(--main-font-family) !important;
 }
 
 .purple-color {
-  color: var(--purple-color) !important;
+    color: var(--purple-color) !important;
 }
 
 .purple-color-bg {
-  background: var(--purple-color) !important;
+    background: var(--purple-color) !important;
 }
 
 .button {
-  border: none;
-  padding: 10px 60px;
-  border-radius: 6px;
+    border: none;
+    padding: 10px 60px;
+    border-radius: 6px;
 }
+
 .navbar {
-  background: #fff !important;
+    background: #fff !important;
 }
 
 .nav-item {
-  padding: 10px !important;
-  font-size: 18px;
+    padding: 10px !important;
+    font-size: 18px;
 }
 
 .buttons {
-  border-radius: 6px;
-  color: #fff;
+    border-radius: 6px;
+    color: #fff;
 }
 
 .signup-btn-cont {
-  margin-right: 100px !important;
+    margin-right: 100px !important;
 }
+
 
 /* .landing {
     background-image:url(../assets/land-bg.png) ;
@@ -49,102 +51,106 @@ body {
 } */
 
 header .land {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-image: url(../assets/component-min.png);
-  background-size: cover;
-  color: #fff;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 50vh;
-
-  text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-image: url(../assets/component-min.png);
+    background-size: cover;
+    color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    text-align: center;
 }
 
-.land-text > .cta-btn {
-  background: #645b5b;
-  color: white;
-  border-radius: 0;
-  padding: 5px 20px 5px 20px;
+.land-text>.cta-btn {
+    background: #645b5b;
+    color: white;
+    border-radius: 0;
+    padding: 5px 20px 5px 20px;
 }
 
 section {
-  margin-top: 7%;
+    margin-top: 7%;
 }
 
 .land-form {
-  background: #fff;
-  width: -moz-fit-content;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;
-  height: auto;
-  position: relative;
-  top: 70px;
-  padding: 20px;
-  box-shadow: 0px 4px 4px rgba(95, 95, 95, 0.25);
-  border-radius: 6px;
+    background: #fff;
+    width: -moz-fit-content;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    height: auto;
+    position: relative;
+    top: 70px;
+    padding: 20px;
+    box-shadow: 0px 4px 4px rgba(95, 95, 95, 0.25);
+    border-radius: 6px;
 }
 
 .land-form form {
-  margin: 20px auto;
+    margin: 20px auto;
 }
 
 .form-search input {
-  background: #f7f7f7 !important;
-  border-radius: 0;
-  margin: 10px 0;
-  border: none;
-  height: 60px;
+    background: #f7f7f7 !important;
+    border-radius: 0;
+    margin: 10px 0;
+    border: none;
+    height: 60px;
 }
 
 .form-search select {
-  background: #f7f7f7 !important;
-  border-radius: 0;
-  margin: 10px 0;
-  border: none;
-  height: 60px !important;
+    background: #f7f7f7 !important;
+    border-radius: 0;
+    margin: 10px 0;
+    border: none;
+    height: 60px !important;
 }
 
 .icon-img {
-  position: relative;
-  bottom: 0;
-  left: 20px;
+    position: relative;
+    bottom: 0;
+    left: 20px;
 }
 
 #about p {
-  font-size: 20px;
-  line-height: 30px;
+    font-size: 20px;
+    line-height: 30px;
 }
+
 #about h4 {
-  font-size: 30px;
-  line-height: 50px;
+    font-size: 30px;
+    line-height: 50px;
 }
 
 .property-card {
-  line-height: 15px;
-  background-color: #f1f1f1;
-  width: fit-content;
-  padding: 10px;
-  margin: 20px;
+    line-height: 15px;
+    background-color: #f1f1f1;
+    width: fit-content;
+    padding: 10px;
+    margin: 20px;
 }
+
 .property-info {
-  margin-top: -30px;
+    margin-top: -30px;
 }
+
 .property-info-two {
-  padding: 10px;
+    padding: 10px;
 }
+
 .property-img {
-  border-radius: 8px !important;
+    border-radius: 8px !important;
 }
 
 .tag {
-  background-color: grey;
-  color: black;
-  width: fit-content;
-  padding: 7px;
-  border-radius: 4px;
+    background-color: grey;
+    color: black;
+    width: fit-content;
+    padding: 7px;
+    border-radius: 4px;
 }
+
 
 /**
 Each tile's image height is known in advance.  at archive.org we use backend (PHP) to fetch that height and then simply have to run a formula like this for picking which 'htX' class to use:
@@ -156,91 +162,102 @@ So,
 a 'row span' of 2 is  60px high,
 a 'row span' of 3 is 100px high, etc.
  */
+
 .results {
-  /* fit in up to 5 columns of 180px wide tiles, 20px gutters: 5*180 + 4*20: */
-  /* max-width: 980px; */
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 20px;
-  /* fit as many columns as possible, 180px wide each: */
-  grid-template-columns: 1fr 1fr; /* each row is 20px high -- we always span 2+ */
-  grid-auto-rows: minmax(20px, auto);
-  justify-content: center;
+    /* fit in up to 5 columns of 180px wide tiles, 20px gutters: 5*180 + 4*20: */
+    /* max-width: 980px; */
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 20px;
+    /* fit as many columns as possible, 180px wide each: */
+    grid-template-columns: 1fr 1fr;
+    /* each row is 20px high -- we always span 2+ */
+    grid-auto-rows: minmax(20px, auto);
+    justify-content: center;
 }
 
 .ht1 {
-  grid-row-end: span 3;
+    grid-row-end: span 3;
 }
+
 .ht2 {
-  grid-row-end: span 4;
+    grid-row-end: span 4;
 }
+
 .ht3 {
-  grid-row-end: span 5;
+    grid-row-end: span 5;
 }
+
 .ht4 {
-  grid-row-end: span 2;
-  width: 400px;
-  text-align: justify;
+    grid-row-end: span 2;
+    width: 400px;
+    text-align: justify;
 }
 
 .media-object {
-  margin: auto;
-  margin-top: 15%;
+    margin: auto;
+    margin-top: 15%;
 }
 
 footer {
-  margin-top: 3%;
-  padding: 50px 20px;
-  background-color: var(--purple-color);
+    margin-top: 3%;
+    padding: 50px 20px;
+    background-color: var(--purple-color);
 }
 
 .foot-text {
-  font-weight: bold;
-  color: #fff;
+    font-weight: bold;
+    color: #fff;
 }
 
 .foot-links p {
-  color: #fff;
+    color: #fff;
 }
+
 .foot-links {
-  text-decoration: none;
-  list-style-type: none;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 .foot-links a {
-  color: #fff;
+    color: #fff;
 }
+
 .foot-form input[type="email"] {
-  height: 50px;
-  border: 1px solid #fff;
-  width: 100%;
+    height: 50px;
+    border: 1px solid #fff;
+    width: 100%;
 }
+
 
 /* find houses page */
 
 .grey-area {
-  background: #f4f4f4;
-  padding: 10px;
+    background: #f4f4f4;
+    padding: 10px;
 }
+
 .see-details {
-  color: var(--purple-color);
+    color: var(--purple-color);
 }
 
 .house-card {
-  margin: 30px;
+    margin: 30px;
 }
 
 .the-paginate {
-  width: fit-content;
+    width: fit-content;
 }
 
 .page-link {
-  color: var(--purple-color) !important;
+    color: var(--purple-color) !important;
 }
+
 .page-link:hover {
-  background: var(--purple-color) !important;
-  color: #fff !important;
+    background: var(--purple-color) !important;
+    color: #fff !important;
 }
+
 
 /* .success-cont {
   position: relative;
@@ -254,111 +271,108 @@ footer {
 } */
 
 .main {
-  padding-top: 8%;
+    padding-top: 8%;
 }
+
 .extra-main {
-  margin-top: 10%;
+    margin-top: 10%;
 }
 
 .land-wrap {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
+
 .land-text {
-  flex-basis: 50%;
+    flex-basis: 50%;
 }
+
 .land-form {
-  flex-basis: 40%;
+    flex-basis: 40%;
 }
-button.land-btn {
-  transition: all 0.7s ease-in-out;
-  background: #fff !important;
-  color: var(--purple-color) !important;
+
+a.land-btn {
+    transition: all 0.7s ease-in-out;
+    background: #fff !important;
+    color: var(--purple-color) !important;
 }
-button.land-btn:hover {
-  color: #fff !important;
-  background-color: var(--purple-color) !important;
+
+a.land-btn:hover {
+    color: #fff !important;
+    background-color: var(--purple-color) !important;
 }
 
 @media screen and (max-width: 768px) {
-  .media-object {
-    margin-top: 0;
-  }
-
-  .add-room {
-    height: 40px;
-  }
-  .split-text {
-    font-size: 20px !important;
-  }
-  .split-text h4 {
-    font-size: 20px !important;
-  }
-
-  .land-wrap {
-    flex-direction: column;
-  }
-  .land-text {
-    font-size: 14px;
-  }
-  .land-text h1 {
-    font-size: 20px;
-  }
-  .land-form {
-    background: #fff;
-    flex-basis: 100%;
-    width: 100%;
-    height: auto;
-    position: initial;
-    top: 0;
-    padding: 20px;
-    box-shadow: 0px 4px 4px rgba(95, 95, 95, 0);
-    border-radius: 6px;
-  }
-
-  footer {
-    text-align: left !important;
-  }
-  .foot-text {
-    text-align: left;
-  }
-
-  header .land {
-    padding-top: 20px;
-    padding-bottom: 5rem;
-    background-image: url(../assets/component-min.png);
-    background-size: cover;
-    color: #fff;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: auto !important;
-
-    text-align: center;
-  }
-
-  .results {
-    display: block;
-  }
-  .ht4 {
-    width: 100%;
-  }
-
-  .property-card {
-    width: 80vw !important;
-  }
+    .media-object {
+        margin-top: 0;
+    }
+    .add-room {
+        height: 40px;
+    }
+    .split-text {
+        font-size: 20px !important;
+    }
+    .split-text h4 {
+        font-size: 20px !important;
+    }
+    .land-wrap {
+        flex-direction: column;
+    }
+    .land-text {
+        font-size: 14px;
+    }
+    .land-text h1 {
+        font-size: 20px;
+    }
+    .land-form {
+        background: #fff;
+        flex-basis: 100%;
+        width: 100%;
+        height: auto;
+        position: initial;
+        top: 0;
+        padding: 20px;
+        box-shadow: 0px 4px 4px rgba(95, 95, 95, 0);
+        border-radius: 6px;
+    }
+    footer {
+        text-align: left !important;
+    }
+    .foot-text {
+        text-align: left;
+    }
+    header .land {
+        padding-top: 20px;
+        padding-bottom: 5rem;
+        background-image: url(../assets/component-min.png);
+        background-size: cover;
+        color: #fff;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: auto !important;
+        text-align: center;
+    }
+    .results {
+        display: block;
+    }
+    .ht4 {
+        width: 100%;
+    }
+    .property-card {
+        width: 80vw !important;
+    }
 }
 
 @media screen and (min-width: 767px) {
-  .land,
-  .land-one {
-    text-align: left;
-    height: 70vh;
-    min-height: 50vh;
-  }
-
-  .land-text {
-    position: relative;
-    top: 121px;
-    left: 22px;
-  }
+    .land,
+    .land-one {
+        text-align: left;
+        height: 70vh;
+        min-height: 50vh;
+    }
+    .land-text {
+        position: relative;
+        top: 121px;
+        left: 22px;
+    }
 }

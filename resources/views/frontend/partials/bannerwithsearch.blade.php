@@ -44,14 +44,14 @@
         </p>
         <div class="mx-auto text-center btn-inline">
           <a href="find-house.html">
-            <button class="button purple-color-bg m-2  land-btn text-white" type="submit">
+            <a class="button purple-color-bg m-2  land-btn text-white" href="{{ route('property') }}">
               Find Houses
-            </button>
+            </a>
           </a>
           <a href="find-hotel.html">
-            <button class="button purple-color-bg land-btn m-2 text-white" type="submit">
+            <a class="button purple-color-bg land-btn m-2 text-white" href="{{ route('property') }}">
               Find Hotels
-            </button>
+            </a>
           </a>
 
         </div>
