@@ -102,10 +102,12 @@
                 </ul>
             </div>
             <div class="col-md-3 col-xs-12">
-                <h3 class="foot-text">Subscribe to Our NewsLetter</h3>
-                <form class="foot-form" action="#">
-                    <input type="email" name="email" placeholder="Enter your email" id="foot-email">
-                </form>
+                <ul class="foot-links">
+                    <h3 class="foot-text">Subscribe to Our NewsLetter</h3>
+                    <form class="foot-form" action="#">
+                        <input type="email" name="email" placeholder="Enter your email" id="foot-email">
+                    </form>
+                  </ul>
                 
             </div>
         </div>

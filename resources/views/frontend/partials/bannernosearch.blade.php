@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Nadio</a>
+    <a class="navbar-brand" href="/"><img src="{{ asset('rex/assets/rsz_logo.png')}}" alt="logo"></a>
     <button
       class="navbar-toggler"
       type="button"

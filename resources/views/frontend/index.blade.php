@@ -13,14 +13,11 @@
               You
             </h4>
             <p>
-              Selected houses, apartments available in nigeria lagos, abuja
-              and more cities. Newly built and furnished properties, rent
-              easily Online. Subscribe To E-Update s.Selected houses,
-              apartments available in nigeria lagos, abuja and more cities.
-              Newly built and furnished properties, rent easily Online.
-            </p>
-            <a class="button purple-color-bg text-white" href="{{route('about')}}">
-              Learn More
+              You can rent, sell , lease , or buy on Nadio.com 
+               Comfort and satisfaction are the basic wants of a hotel, as your needs are our priorities and your wants, our goals
+               </p>
+            <a class="button purple-color-bg text-white" href="{{route('property')}}">
+              Start Search
             </a>
           </div>
         </div>
@@ -248,7 +245,7 @@
           </div>
 
           <div class="ht4">
-            <p>
+            <p class="pt-3">
               houses, apartments available in nigeria lagos, abuja and more
               cities. Newly built and furnished properties, rent easily
               Online. Subscribe To E-Updates.Selected houses, apartments
@@ -408,7 +405,7 @@
               @endif
                 <div class="col-md-12">
                   <div class="mt-5">
-                    <div class="text-center p-3" >
+                    <div class="text-center client-img">
                       <img src="{{Storage::url('testimonial/'.$testimonial->image)}}" alt="{{$testimonial->name}}">
                     </div>
                     <div class="text-center p-3" >

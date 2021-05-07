@@ -2,7 +2,7 @@
        
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Nadio</a>
+      <a class="navbar-brand" href="/"><img src="{{ asset('rex/assets/rsz_logo.png')}}" alt="logo"></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -36,22 +36,18 @@
   <div class="land" style="height:auto;">
     <div class="container  land-wrap ">
       <div class="land-text  text-left">
-        <h1>Find Houses and Book Hotel Rooms With No Difficulties.</h1>
+        <h1>NADIO REAL ESTATE AGENCY</h1>
         <p>
           Selected houses, apartments available in nigeria lagos, abuja and
           more cities. Newly built and furnished properties, rent easily
           Online. Subscribe To E-Updates.
         </p>
         <div class="mx-auto text-center btn-inline">
-          <a href="find-house.html">
-            <a class="button purple-color-bg m-2  land-btn text-white" href="{{ route('property') }}">
+          <a class="btn button bg-white purple-color-bg m-2  land-btn" href="{{ route('property') }}">
               Find Houses
-            </a>
           </a>
-          <a href="find-hotel.html">
-            <a class="button purple-color-bg land-btn m-2 text-white" href="{{ route('property') }}">
+          <a class="btn button bg-white purple-color-bg land-btn m-2" href="{{ route('property') }}">
               Find Hotels
-            </a>
           </a>
 
         </div>
