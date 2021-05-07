@@ -30,7 +30,7 @@ class TestimonialController extends Controller
         $request->validate([
             'name' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png',
-            'testimonial' => 'required|max:200'
+            'testimonial' => 'required'
         ]);
 
         $image = $request->file('image');
